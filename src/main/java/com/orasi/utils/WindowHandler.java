@@ -15,19 +15,18 @@ public class WindowHandler {
 	public void waitUntilWindowExists(WebDriver driver, String window){
 		int time = 0 ;
 		boolean found = false;
-		while(!found) {
+		while(!found)
 			for (String winHandle : driver.getWindowHandles()) {
-				try {
-					driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
-					if (driver.getTitle().toUpperCase().contains(window.toUpperCase())) {
-						found = true;
-						break;
-					}
-				} catch (NoSuchWindowException | NullPointerException e) {
-
-				}
-			}
-		}
+				try{
+						driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+						if (driver.getTitle().toUpperCase().contains(window.toUpperCase())){
+							found = true;
+							break;
+						}
+			       }catch(NoSuchWindowException | NullPointerException e){
+			    	   
+			       }
+			}		
 			time++;
 			
 			if (time == WebDriverSetup.getDefaultTestTimeout()) found = true;

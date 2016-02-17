@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="2"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="7,522">
+  <properties />
+            <testcase name="testPrzelewZwykly2" time="1,166" classname="asseco.CBP.tests.FirstTests">
+                <failure type="org.openqa.selenium.ElementNotVisibleException"
+                  message="Element is not currently visible and so may not be interacted with
+Command duration or timeout: 12 milliseconds
+Build info: version: &apos;2.49.1&apos;, revision: &apos;808c23b0963853d375cbe54b90bbd052e2528a54&apos;, time: &apos;2016-01-21 09:37:52&apos;
+System info: host: &apos;aps00062837-mb&apos;, ip: &apos;172.20.22.253&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_71&apos;
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 82abcd99-8301-4a67-b292-b766fcd12335"
+              >
+<![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 12 milliseconds
+Build info: version: '2.49.1', revision: '808c23b0963853d375cbe54b90bbd052e2528a54', time: '2016-01-21 09:37:52'
+System info: host: 'aps00062837-mb', ip: '172.20.22.253', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_71'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=44.0.2, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 82abcd99-8301-4a67-b292-b766fcd12335
+  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+  sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+  sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+  java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+  org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+  org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+  org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+  org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+  org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+  asseco.CBP.components.NavigationMenu.navigateToPayments(NavigationMenu.java:29)
+  asseco.CBP.tests.FirstTests.testPrzelewZwykly2(FirstTests.java:99)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:497)
+  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+  org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
+  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
+  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
+  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+  org.testng.TestRunner.privateRun(TestRunner.java:782)
+  org.testng.TestRunner.run(TestRunner.java:632)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+  org.testng.SuiteRunner.run(SuiteRunner.java:268)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
+  org.testng.TestNG.run(TestNG.java:1064)
+  org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+  org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:122)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:497)
+  com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Build info: version: '2.49.1', revision: '808c23b0963853d375cbe54b90bbd052e2528a54', time: '2016-01-21 09:37:52'
+System info: host: 'aps00062837-mb', ip: '172.20.22.253', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_71'
+Driver info: driver.version: unknown
+  <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/LUKASZ~1.TKA/AppData/Local/Temp/anonymous7509238356683032817webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10003)
+  <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/LUKASZ~1.TKA/AppData/Local/Temp/anonymous7509238356683032817webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12540)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/LUKASZ~1.TKA/AppData/Local/Temp/anonymous7509238356683032817webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12557)
+  <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///C:/Users/LUKASZ~1.TKA/AppData/Local/Temp/anonymous7509238356683032817webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12562)
+  <anonymous class>.DelayedCommand.prototype.execute/<(file:///C:/Users/LUKASZ~1.TKA/AppData/Local/Temp/anonymous7509238356683032817webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12504)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+            <testcase name="testPrzelewZwykly" time="6,356" classname="asseco.CBP.tests.FirstTests" />
+      
+</testsuite>
