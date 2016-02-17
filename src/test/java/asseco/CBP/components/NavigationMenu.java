@@ -8,7 +8,7 @@ import com.paulhammant.ngwebdriver.ByAngular;
 
 import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 import asseco.CBP.pages.LoginPage;
-import asseco.CBP.pages.Paments;
+import asseco.CBP.pages.Payments;
 
 public class NavigationMenu {
 		
@@ -21,14 +21,14 @@ public class NavigationMenu {
 	      
 	   }
 	 
-	   public Paments navigateToPayments() {
+	   public Payments navigateToPayments() {
 //		 WebElement firstname = driver.findElement(ByAngular.model("username"));
 		 waitForAngularRequestsToFinish(driver);
 		 WebDriverWait wait = new WebDriverWait(driver, 50);
 		 WebElement we = driver.findElement(NAVIGATION_ITEM_PAYMENTS);
 	     we.click();
 	     waitForAngularRequestsToFinish(driver);
-	     return new Paments(driver);
+	     return new Payments(driver);
 	   }
 	   
 
