@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitForAngularRequestsToFinish extends AngularJavaScriptFunctions{
 
@@ -15,7 +16,7 @@ public class WaitForAngularRequestsToFinish extends AngularJavaScriptFunctions{
     }
     
 	public static void waitForAngularRequestsToFinish(WebDriver driver) {
-		driver.manage().timeouts().setScriptTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
 		WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish((JavascriptExecutor) driver);
 	}
 }

@@ -21,12 +21,13 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 
 //@Listeners({EmailableReporter.class, Screenshot.class})
 @Listeners(EmailableReporter.class)
-public class FirstTests {
+public class PaymentsOneSession {
 	private static WebDriver driver;
 	private FirefoxDriver fdriver;
 	private HomePage homePage;
@@ -36,7 +37,7 @@ public class FirstTests {
 	public void setUp() throws IOException {
 		System.out.println("@BeforeClass");
 		driver = new FirefoxDriver();
-//		driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
 		ngWebDriver = new NgWebDriver(fdriver);
 		homePage = new HomePage(driver).open();
 		Zaloguj();

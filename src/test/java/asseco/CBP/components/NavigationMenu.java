@@ -11,7 +11,8 @@ import asseco.CBP.pages.LoginPage;
 import asseco.CBP.pages.Payments;
 
 public class NavigationMenu {
-		
+
+	   private static final By LEWE_MENU = By.className("left-menu-trigger");
 	   private static final By NAVIGATION_ITEM_PAYMENTS = ByAngular.repeater("element in elements").row(2);
 	   private static final By NAVIGATION_ITEM_PAYMENTS2 = By.linkText("Płatności");
 	   private WebDriver driver;
@@ -24,9 +25,12 @@ public class NavigationMenu {
 	   public Payments navigateToPayments() {
 //		 WebElement firstname = driver.findElement(ByAngular.model("username"));
 		 waitForAngularRequestsToFinish(driver);
-		 WebDriverWait wait = new WebDriverWait(driver, 50);
-		 WebElement we = driver.findElement(NAVIGATION_ITEM_PAYMENTS);
-	     we.click();
+		 if (!driver.findElement(NAVIGATION_ITEM_PAYMENTS).isDisplayed()) {
+             driver.findElement(LEWE_MENU).click();
+         }
+           driver.findElement(NAVIGATION_ITEM_PAYMENTS).click();
+//		 WebElement we = driver.findElement(NAVIGATION_ITEM_PAYMENTS);
+//	     we.click();
 	     waitForAngularRequestsToFinish(driver);
 	     return new Payments(driver);
 	   }
