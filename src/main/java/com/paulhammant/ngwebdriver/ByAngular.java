@@ -31,6 +31,10 @@ public class ByAngular extends AngularJavaScriptFunctions {
         return new ByAngularModel(model);
     }
 
+    public static ByAngularCssContainingText cssContainingText(String cssSelector, String searchText) {
+        return new ByAngularCssContainingText(cssSelector,searchText);
+    }
+
     public static ByAngularOptions options(String options) {
         return new ByAngularOptions(options);
     }
@@ -53,7 +57,7 @@ public class ByAngular extends AngularJavaScriptFunctions {
 
         protected final Object errorIfNull(Object o) {
             if (o == null || o instanceof List && ((List) o).size() == 0) {
-                throw new NoSuchElementException(this + " didn't have any matching elements at this place in the DOM");
+                throw new NoSuchElementException(this + " didn't have any matching elements at this place in the DOM = nie znalazlo obiektu na stronie");
             }
             return o;
         }

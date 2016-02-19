@@ -7,7 +7,7 @@
   </listeners>
   <test name="Test">
     <classes>
-      <class name="asseco.CBP.tests.PaymentsWithLoginLogout"/>
+      <!--class name="asseco.CBP.tests.PaymentsWithLoginLogout"/-->
       <class name="asseco.CBP.tests.PaymentsOneSession"/>
     </classes>
   </test> <!-- Test -->

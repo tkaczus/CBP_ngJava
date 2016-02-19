@@ -16,6 +16,7 @@ public class HomePage {
 
 	public HomePage open() {
 		driver.get(CBP_HOME_PAGE_URL);
+		driver.manage().window().maximize();
 		waitForAngularRequestsToFinish(driver);
 		return this;
 	}
