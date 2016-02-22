@@ -21,19 +21,25 @@ public class NavigationMenu {
 	   
 	   public NavigationMenu(WebDriver driver) {
 	      this.driver =  driver;
-		   if (!driver.findElement(NAVIGATION_ITEM_PAYMENTS).isDisplayed()) {
-			   driver.findElement(LEWE_MENU).click();
-		   }
-		   waitForAngularRequestsToFinish(driver);
+
 	   }
-	 
+
+		private void OpenMenuIfClosed() {
+			if (!driver.findElement(NAVIGATION_ITEM_PAYMENTS).isDisplayed()) {
+				driver.findElement(LEWE_MENU).click();
+			}
+			waitForAngularRequestsToFinish(driver);
+		}
+
 	   public Payments navigateToPayments() {
+		   OpenMenuIfClosed();
 		   driver.findElement(NAVIGATION_ITEM_PAYMENTS).click();
 		   waitForAngularRequestsToFinish(driver);
 	     return new Payments(driver);
 	   }
 
 		public Accounts navigateToAccounts() {
+			OpenMenuIfClosed();
 			driver.findElement(NAVIGATION_ITEM_ACCOUNTS).click();
 			waitForAngularRequestsToFinish(driver);
 			return new Accounts(driver);

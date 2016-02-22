@@ -83,10 +83,10 @@ public class PaymentsOneSession {
 		Properties obj = new Properties();
 		FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\user.properties");
 		obj.load(objfile);
-		System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
-		System.out.println("USER_PASSWORD=" + obj.getProperty("USER_PASSWORD"));
-		homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("USER_LOGIN"),
-				obj.getProperty("USER_PASSWORD"));
+		System.out.println("DB_USER_LOGIN=" + obj.getProperty("DB_USER_LOGIN"));
+		System.out.println("DB_USER_PASSWORD=" + obj.getProperty("DB_USER_PASSWORD"));
+		homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("DB_USER_LOGIN"),
+				obj.getProperty("DB_USER_PASSWORD"));
 	}
 
 	@Test
@@ -95,10 +95,5 @@ public class PaymentsOneSession {
 		payments.uzupelnijPrzelewZwykly("Automat1","06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ");
 	}
 
-//	@Test
-//	public void testPrzelewZwykly2() throws IOException {
-//		Payments payments = homePage.navigationMenu().navigateToPayments();
-//		payments.uzupelnijPrzelewZwykly2("Automat1","06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ");
-//	}
 
 }
