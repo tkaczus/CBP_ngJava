@@ -93,17 +93,17 @@ public class PaymentsWithLoginLogout {
 		payments.uzupelnijPrzelewZwykly("Automat1","06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ");
 	}
 
-	@Test
-	public void testPrzelewZwykly2() throws IOException {
-		Properties obj = new Properties();
-		FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\user.properties");
-		obj.load(objfile);
-		System.out.println("DB_USER_LOGIN=" + obj.getProperty("DB_USER_LOGIN"));
-		System.out.println("DB_USER_PASSWORD=" + obj.getProperty("DB_USER_PASSWORD"));
-		homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("DB_USER_LOGIN"),
-				obj.getProperty("DB_USER_PASSWORD"));
-		Payments payments = homePage.navigationMenu().navigateToPayments();
-		payments.uzupelnijPrzelewZwykly2("Automat1","06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ");
-	}
+//	@Test
+//	public void testPrzelewZwykly2() throws IOException {
+//		Properties obj = new Properties();
+//		FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\user.properties");
+//		obj.load(objfile);
+//		System.out.println("DB_USER_LOGIN=" + obj.getProperty("DB_USER_LOGIN"));
+//		System.out.println("DB_USER_PASSWORD=" + obj.getProperty("DB_USER_PASSWORD"));
+//		homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("DB_USER_LOGIN"),
+//				obj.getProperty("DB_USER_PASSWORD"));
+//		Payments payments = homePage.navigationMenu().navigateToPayments();
+//		payments.uzupelnijPrzelewZwykly2("Automat1","06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ");
+//	}
 
 }

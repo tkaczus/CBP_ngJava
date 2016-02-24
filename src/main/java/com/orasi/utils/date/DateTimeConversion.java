@@ -44,8 +44,19 @@ public class DateTimeConversion {
 		Calendar cal = Calendar.getInstance();
 		String currentDate = dateFormat.format(cal.getTime());
 		cal.add(Calendar.DATE, Integer.parseInt(daysOut));
-		String convertedDate=dateFormat.format(cal.getTime());    
-		
+		String convertedDate=dateFormat.format(cal.getTime());
+
+		return convertedDate;
+	}
+
+	public static String ConvertToDateDDMMYYYY(String daysOut){
+		String date = "";
+		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		Calendar cal = Calendar.getInstance();
+		String currentDate = dateFormat.format(cal.getTime());
+		cal.add(Calendar.DATE, Integer.parseInt(daysOut));
+		String convertedDate=dateFormat.format(cal.getTime());
+
 		return convertedDate;
 	}
 }

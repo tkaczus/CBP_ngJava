@@ -3,6 +3,11 @@ package asseco.CBP.components;
 import com.paulhammant.ngwebdriver.ByAngular;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+
 import static asseco.CBP.components.Buttons.*;
 
 
@@ -17,9 +22,18 @@ public class Authorizations {
 	   }
 	 
 	   public void AuthorizeTan() {
-		   driver.findElement(tanX).sendKeys("11");
-		   driver.findElement(tanY).sendKeys("11");
-		   driver.findElement(AKCEPTUJ).click();
+		  try {
+			   driver.findElement(tanX).sendKeys("11");
+			   driver.findElement(tanY).sendKeys("11");
+		   }
+		  catch (WebDriverException e) {
+			  System.out.println("Brak autoryzacji");
+//		assertThat(e.getMessage(), startsWith("$scope variable 'locationnnnnnnnn' not found in same scope as the element passed in."));
+		}
+		   finally {
+			  driver.findElement(AKCEPTUJ).click();
+		  }
+
 	   }
 	   
 
