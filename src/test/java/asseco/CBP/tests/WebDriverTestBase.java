@@ -3,11 +3,13 @@ package asseco.CBP.tests;
 import asseco.CBP.pages.HomePage;
 import asseco.CBP.pages.Payments;
 import com.orasi.utils.ReplaceLogForScreenings;
+import com.paulhammant.ngwebdriver.ByAngular;
 import com.paulhammant.ngwebdriver.NgWebDriver;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
@@ -20,32 +22,31 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 
-//@Listeners({EmailableReporter.class, Screenshot.class})
 @Listeners(EmailableReporter.class)
-public class PaymentsWithLoginLogout {
-    private static WebDriver driver;
-    private FirefoxDriver fdriver;
-    private HomePage homePage;
-    private NgWebDriver ngWebDriver;
+public class WebDriverTestBase {
+    public static WebDriver driver;
+    public FirefoxDriver fdriver;
+    public HomePage homePage;
+    public NgWebDriver ngWebDriver;
 
     @BeforeClass(alwaysRun = true)
-    public void setUp() {
+    public void setUp() throws IOException {
         System.out.println("@BeforeClass");
         driver = new FirefoxDriver();
         driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
         ngWebDriver = new NgWebDriver(fdriver);
+        homePage = new HomePage(driver).open();
+        Zaloguj();
     }
 
     @BeforeMethod(alwaysRun = true)
-    public void openHomePage() throws IOException {
+    public void openHomePage() {
         System.out.println("@BeforeMethod");
-        homePage = new HomePage(driver).open();
-        waitForAngularRequestsToFinish(driver);
     }
 
     @AfterClass(alwaysRun = true)
@@ -77,11 +78,9 @@ public class PaymentsWithLoginLogout {
         System.out.println("Saved [a href=\"file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "]TestNG Reporter[/a]");
         Reporter.setEscapeHtml(false);
         Reporter.log("Saved [a href=*file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "*]TestNG Reporter[/a]");
-        homePage.navigationMenu().navigateToLoginPage().logOut();
     }
 
-    @Test
-    public void testPrzelewZwykly() throws IOException {
+    public void Zaloguj() throws IOException {
         Properties obj = new Properties();
         FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\user.properties");
         obj.load(objfile);
@@ -89,21 +88,16 @@ public class PaymentsWithLoginLogout {
         System.out.println("DB_USER_PASSWORD=" + obj.getProperty("DB_USER_PASSWORD"));
         homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("DB_USER_LOGIN"),
                 obj.getProperty("DB_USER_PASSWORD"));
-        Payments payments = homePage.navigationMenu().navigateToPayments();
-        payments.uzupelnijPrzelewZwykly("Automat1", "06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ", null, false);
     }
 
-//	@Test
-//	public void testPrzelewZwykly2() throws IOException {
-//		Properties obj = new Properties();
-//		FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\user.properties");
-//		obj.load(objfile);
-//		System.out.println("DB_USER_LOGIN=" + obj.getProperty("DB_USER_LOGIN"));
-//		System.out.println("DB_USER_PASSWORD=" + obj.getProperty("DB_USER_PASSWORD"));
-//		homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("DB_USER_LOGIN"),
-//				obj.getProperty("DB_USER_PASSWORD"));
-//		Payments payments = homePage.navigationMenu().navigateToPayments();
-//		payments.uzupelnijPrzelewZwykly2("Automat1","06 1130 0010 0000 0003 1620 0001", "22,22", "TYTUŁ");
-//	}
-
+    public static void findNgRepeatAndClick(String ngRepeat, String searchText) {
+        List<WebElement> rachunki = driver.findElements(ByAngular.repeater(ngRepeat));
+        for (WebElement item : rachunki) {
+            if (item.getText().contains(searchText)) {
+                System.out.println("Wybralo z listy element=" + item.getText());
+                item.click();
+                break;
+            }
+        }
+    }
 }

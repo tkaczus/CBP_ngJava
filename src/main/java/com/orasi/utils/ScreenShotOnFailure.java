@@ -19,7 +19,7 @@ import org.testng.TestListenerAdapter;
 
 public class ScreenShotOnFailure extends TestListenerAdapter {
 
-    private WebDriver driver;
+    WebDriver driver=null;
 
     @Override
     public void onTestFailure(ITestResult tr) {
