@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="26c7bb66-9726-4832-adb0-aa9949f6fea4" name="Default" comment="mainDriverclass + tests&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/PaymentsWithLoginLogout.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/user.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/surefire-reports/screenshots/17_lut_2016__12_35_14PM.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/PaymentsWithLoginLogout.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/user.properties" afterPath="$PROJECT_DIR$/src/main/resources/db.user.properties" />
+    <list default="true" id="26c7bb66-9726-4832-adb0-aa9949f6fea4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/orasi/utils/date/DateTimeConversion.class" afterPath="$PROJECT_DIR$/target/classes/com/orasi/utils/date/DateTimeConversion.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/paulhammant/ngwebdriver/WaitForAngularRequestsToFinish.class" afterPath="$PROJECT_DIR$/target/classes/com/paulhammant/ngwebdriver/WaitForAngularRequestsToFinish.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/asseco/CBP/pages/Accounts.class" afterPath="$PROJECT_DIR$/target/test-classes/asseco/CBP/pages/Accounts.class" />
@@ -17,21 +12,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/PaymentsOneSession.class" afterPath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/PaymentsOneSession.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/WebDriverTestBase.class" afterPath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/WebDriverTestBase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/orasi/utils/date/DateTimeConversion.java" afterPath="$PROJECT_DIR$/src/main/java/com/orasi/utils/date/DateTimeConversion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/paulhammant/ngwebdriver/WaitForAngularRequestsToFinish.java" afterPath="$PROJECT_DIR$/src/main/java/com/paulhammant/ngwebdriver/WaitForAngularRequestsToFinish.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Accounts.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Accounts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Deposits.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Deposits.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/LoginPage.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/LoginPage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Payments.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Payments.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/PaymentsOneSession.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/PaymentsOneSession.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/emailable-report.html" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/output.html" afterPath="$PROJECT_DIR$/test-output/html/output.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/overview.html" afterPath="$PROJECT_DIR$/test-output/html/overview.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/suite1_test1_results.html" afterPath="$PROJECT_DIR$/test-output/html/suite1_test1_results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/suites.html" afterPath="$PROJECT_DIR$/test-output/html/suites.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="CBP_ngJava.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -908,7 +889,13 @@
       <option name="project" value="LOCAL" />
       <updated>1456325322509</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="mainDriverclass + tests&#10;">
+      <created>1456833437613</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1456833437613</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
