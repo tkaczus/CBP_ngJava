@@ -23,6 +23,12 @@ public class Accounts {
 		this.navigationMenu = new NavigationMenu(driver);
 	}
 
+
+
+	/**
+	 * wyszukanie po fragmencie nrb
+	 * @param nrb
+     */
 	public void wyszukajRachunek(String nrb) {
 		driver.findElement(SZUKAJ).click();
 		driver.findElement(WYSZUKAJ).sendKeys(nrb);

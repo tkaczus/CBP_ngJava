@@ -51,7 +51,7 @@ public class DateTimeConversion {
 
 	public static String ConvertToDateDDMMYYYY(String daysOut){
 		String date = "";
-		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
 		Calendar cal = Calendar.getInstance();
 		String currentDate = dateFormat.format(cal.getTime());
 		cal.add(Calendar.DATE, Integer.parseInt(daysOut));

@@ -23,6 +23,7 @@ public class LoginPage {
 	}
 
 	public HomePage loginAs(String username, String password) {
+		waitForAngularRequestsToFinish(driver);
 		driver.findElement(USERNAME).sendKeys(username);
 		driver.findElement(LOGIN_SUBMIT_BUTTON).click();
 		waitForAngularRequestsToFinish(driver);

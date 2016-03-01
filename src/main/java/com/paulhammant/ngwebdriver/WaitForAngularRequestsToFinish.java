@@ -16,7 +16,7 @@ public class WaitForAngularRequestsToFinish extends AngularJavaScriptFunctions{
     }
     
 	public static void waitForAngularRequestsToFinish(WebDriver driver) {
-		driver.manage().timeouts().setScriptTimeout(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().setScriptTimeout(600, TimeUnit.SECONDS);
 		WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish((JavascriptExecutor) driver);
 	}
 }

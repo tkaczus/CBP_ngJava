@@ -1,7 +1,6 @@
 package asseco.CBP.tests;
 
 import asseco.CBP.pages.HomePage;
-import asseco.CBP.pages.Payments;
 import com.orasi.utils.ReplaceLogForScreenings;
 import com.paulhammant.ngwebdriver.ByAngular;
 import com.paulhammant.ngwebdriver.NgWebDriver;
@@ -82,12 +81,12 @@ public class WebDriverTestBase {
 
     public void Zaloguj() throws IOException {
         Properties obj = new Properties();
-        FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\user.properties");
+        FileInputStream objfile = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\db.user.properties");
         obj.load(objfile);
-        System.out.println("DB_USER_LOGIN=" + obj.getProperty("DB_USER_LOGIN"));
-        System.out.println("DB_USER_PASSWORD=" + obj.getProperty("DB_USER_PASSWORD"));
-        homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("DB_USER_LOGIN"),
-                obj.getProperty("DB_USER_PASSWORD"));
+        System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
+        System.out.println("USER_PASSWORD=" + obj.getProperty("USER_PASSWORD"));
+        homePage.navigationMenu().navigateToLoginPage().loginAs(obj.getProperty("USER_LOGIN"),
+                obj.getProperty("USER_PASSWORD"));
     }
 
     public static void findNgRepeatAndClick(String ngRepeat, String searchText) {
@@ -97,6 +96,10 @@ public class WebDriverTestBase {
                 System.out.println("Wybralo z listy element=" + item.getText());
                 item.click();
                 break;
+            }
+            else
+            {
+                System.out.println("!! Nie znalazło na lisćie" + item.getText());
             }
         }
     }

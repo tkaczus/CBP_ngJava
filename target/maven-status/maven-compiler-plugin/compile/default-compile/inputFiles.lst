@@ -1,8 +1,11 @@
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\Constants.java
+C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\ScreenShotOnFailure.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\Screenshot.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\database\Printer.java
+C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\ByAngularPartialButtonText.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\VariableNotInScopeException.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\dataProviders\CSVDataProvider.java
+C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\NgWebDriver.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\ByAngularExactBinding.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\FrameHandler.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\database\Database.java
@@ -28,6 +31,8 @@ C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngweb
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\database\databaseImpl\OracleDatabase.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\AngularJavaScriptFunctions.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\TestReporter.java
+C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\ReplaceLogForScreenings.java
+C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\ByAngularCssContainingText.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\ByAngularOptions.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\orasi\utils\database\Recordset.java
 C:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\src\main\java\com\paulhammant\ngwebdriver\ByAngularButtonText.java

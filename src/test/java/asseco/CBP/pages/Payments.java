@@ -31,9 +31,9 @@ public class Payments {
     private static final By TYTUL = ByAngular.model("formData.formModel.description");
     private static final By TYTUL_WEWNATRZ = By.name("description");
     private static final By WYSLIJ_PRZELEW = Buttons.WYSLIJ_PRZELEW;
-    private static final By POTWIERDZENIE = By.className("dialog-message");
     private static final By UTWORZ_NOWA_PLATNOSC = Buttons.UTWORZ_NOWA_PLATNOSC;
     private static final By DATA = ByAngular.model("formData.formModel.realizationDate"); //24.02.2016
+    private static final By DATA2 = By.className("input-date eb-dbnext-theme");
     private static final By POWTARZAJ = By.name("optionalCheck");
     //PRZELEW_WLASNY
     private static final By Z_RACHUNKU = ByAngular.model("formData.formModel.remitterAccountId");
@@ -48,7 +48,7 @@ public class Payments {
     private static final By MIASTO = ByAngular.model("formData.formModel.recipientAddress");
     private static final By URZAD_SKARBOWY = ByAngular.model("formData.formModel.recipientName");
     private static final By GRUPA_PODATKOWA = ByAngular.model("formData.taxGroupId");
-    private static final By SYMBOL_FORMULARZA = ByAngular.model("ormData.formModel.formCode");
+    private static final By SYMBOL_FORMULARZA = ByAngular.model("formData.formModel.formCode");
     private static final By TYP_OKRESU = ByAngular.model("formData.formModel.periodType");
     private static final By NUMER_OKRESU = ByAngular.model("formData.formModel.periodNumber");
     private static final By ROK_OKRESU = ByAngular.model("formData.formModel.periodYear");
@@ -62,19 +62,17 @@ public class Payments {
     private static final By NUMER_DEKLARACJI = ByAngular.model("formData.formModel.declarationNo");
     private static final By NIP_PLATNIKA = ByAngular.model("formData.formModel.nip");
     private static final By TYP_DRUGIEGO_IDENTYFIKATORA = ByAngular.model("formData.formModel.secondaryIdType");
-    private static final By IDENTYFIKATOR_UZUPELNIAJACY = ByAngular.model("formData.formModel.secondaryIdTypeModel");
+    private static final By IDENTYFIKATOR_UZUPELNIAJACY = ByAngular.model("formData.formModel.secondaryIdNo");
     private static final By NUMER_DECYZJI = ByAngular.model("formData.formModel.decisionNo");
 
     private final NavigationMenu navigationMenu;
     private WebDriver driver;
     private Authorizations podpis;
-    private Accounts rachunki;
 
     public Payments(WebDriver driver) {
         this.driver = driver;
         this.navigationMenu = new NavigationMenu(driver);
         this.podpis = new Authorizations(driver);
-        this.rachunki = new Accounts(driver);
     }
 
     public void uzupelnijPrzelewZwykly(String nazwaOdbiorcy, String rachunekOdbiorcy, String kwota, String tytul, String dataPrzelewu, boolean czyPowtarzac) {
@@ -90,8 +88,9 @@ public class Payments {
         if (czyPowtarzac)
             driver.findElement(POWTARZAJ).click();
         if (dataPrzelewu != null) {
-            driver.findElement(DATA).clear();
-            driver.findElement(DATA).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
         }
         driver.findElement(WYSLIJ_PRZELEW).click();
         waitForAngularRequestsToFinish(driver);
@@ -99,8 +98,6 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
-        rachunki.navigationMenu().navigateToAccounts();
-        rachunki.wyszukajRachunek("581910");
     }
 
     public void uzupelnijPrzelewWlasny(String zRachunku, String naRahunek, String kwota, String tytul, String dataPrzelewu, boolean czyPowtarzac) {
@@ -128,8 +125,6 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
-        rachunki.navigationMenu().navigateToAccounts();
-        rachunki.wyszukajRachunek(zRachunku);
     }
 
     public void uzupelnijPrzelewEuropejski(String nazwaOdbiorcy, String adresOdbiorcy, String rachunekOdbiorcy, String kodBicSwift, String zRachunku, String kwota, String tytul, String dataPrzelewu) {
@@ -158,8 +153,6 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
-        rachunki.navigationMenu().navigateToAccounts();
-        rachunki.wyszukajRachunek(zRachunku);
     }
 
     public void uzupelnijPrzelewUS(String miasto, String urzadSkarbowy, String grupaPodatkowa, String symbolFormularza, String typOkresu, String numerOkresu,
@@ -169,20 +162,22 @@ public class Payments {
         driver.findElement(TYP_PLATNOSCI).click();
         driver.findElement(PRZELEW_PODATKU).click();
         waitForAngularRequestsToFinish(driver);
-        driver.findElement(MIASTO).click();
+        driver.findElement(MIASTO).findElement(LIST2).click();
         findNgRepeatAndClick("taxOfficeAddress in $select.items", miasto);
-        driver.findElement(URZAD_SKARBOWY).click();
+        waitForAngularRequestsToFinish(driver);
+        driver.findElement(URZAD_SKARBOWY).findElement(LIST2).click();
         findNgRepeatAndClick("taxOffice in $select.items", urzadSkarbowy);
-        driver.findElement(GRUPA_PODATKOWA).click();
+        driver.findElement(GRUPA_PODATKOWA).findElement(LIST2).click();
         findNgRepeatAndClick("type in $select.items", grupaPodatkowa);
-        driver.findElement(SYMBOL_FORMULARZA).click();
+        waitForAngularRequestsToFinish(driver);
+        driver.findElement(SYMBOL_FORMULARZA).findElement(LIST2).click();
         findNgRepeatAndClick("taxFormCode in $select.items", symbolFormularza);
-        driver.findElement(TYP_OKRESU).click();
+        driver.findElement(TYP_OKRESU).findElement(LIST2).click();
         findNgRepeatAndClick("type in $select.items", typOkresu);
-        driver.findElement(NUMER_OKRESU).click();
+        driver.findElement(NUMER_OKRESU).findElement(LIST2).click();
         findNgRepeatAndClick("number in $select.items", numerOkresu);
         driver.findElement(ROK_OKRESU).sendKeys(rokOkresu);
-        driver.findElement(TYP_IDENTYFIKATORA).click();
+        driver.findElement(TYP_IDENTYFIKATORA).findElement(LIST2).click();
         findNgRepeatAndClick("type in $select.items", typIdentyfikatora);
         driver.findElement(IDENTYFIKATOR).sendKeys(identyfikator);
         driver.findElement(Z_RACHUNKU).findElement(LIST2).click();
@@ -199,8 +194,6 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
-        rachunki.navigationMenu().navigateToAccounts();
-        rachunki.wyszukajRachunek(zRachunku);
     }
 
     public void uzupelnijPrzelewZUS(String numerRachunkuZUS, String typWplaty, String deklaracja, String numerDeklaracji, String nipPlatnika, String typIdentyfikatoraUzupelniajacego,
@@ -210,13 +203,16 @@ public class Payments {
         driver.findElement(TYP_PLATNOSCI).click();
         driver.findElement(PRZELEW_DO_ZUS).click();
         waitForAngularRequestsToFinish(driver);
-        driver.findElement(NUMER_RACHUNKU_ZUS).click();
-        findNgRepeatAndClick("account in $select.items", typWplaty);
+        driver.findElement(NUMER_RACHUNKU_ZUS).findElement(LIST2).click();
+        findNgRepeatAndClick("account in $select.items", numerRachunkuZUS);
+        driver.findElement(TYP_WPLATY).findElement(LIST2).click();
+        findNgRepeatAndClick("type in $select.items", typWplaty);
         driver.findElement(DEKLARACJA).sendKeys(deklaracja);
         driver.findElement(NUMER_DEKLARACJI).sendKeys(numerDeklaracji);
         driver.findElement(NIP_PLATNIKA).sendKeys(nipPlatnika);
-        driver.findElement(TYP_DRUGIEGO_IDENTYFIKATORA).click();
+        driver.findElement(TYP_DRUGIEGO_IDENTYFIKATORA).findElement(LIST2).click();
         findNgRepeatAndClick("type in $select.items", typIdentyfikatoraUzupelniajacego);
+        waitForAngularRequestsToFinish(driver);
         driver.findElement(IDENTYFIKATOR_UZUPELNIAJACY).sendKeys(identyfikatorUzupelniajacy);
         driver.findElement(Z_RACHUNKU).findElement(LIST2).click();
         findNgRepeatAndClick("account in $select.items", zRachunku);
@@ -232,8 +228,6 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
-        rachunki.navigationMenu().navigateToAccounts();
-        rachunki.wyszukajRachunek(zRachunku);
     }
 
 

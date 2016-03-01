@@ -35,6 +35,7 @@ public class Deposits {
     }
 
     /**
+     * if rodzaj lokaty null pierwsza z listy
      * Przedłuż z odsetkami
      * Przedłuż bez odsetek
      * Prześlij na rachunek
