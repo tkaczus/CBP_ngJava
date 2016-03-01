@@ -33,7 +33,7 @@ public class Payments {
     private static final By WYSLIJ_PRZELEW = Buttons.WYSLIJ_PRZELEW;
     private static final By UTWORZ_NOWA_PLATNOSC = Buttons.UTWORZ_NOWA_PLATNOSC;
     private static final By DATA = ByAngular.model("formData.formModel.realizationDate"); //24.02.2016
-    private static final By DATA2 = By.className("input-date eb-dbnext-theme");
+    private static final By DATA2 = By.tagName("input");
     private static final By POWTARZAJ = By.name("optionalCheck");
     //PRZELEW_WLASNY
     private static final By Z_RACHUNKU = ByAngular.model("formData.formModel.remitterAccountId");
@@ -64,6 +64,7 @@ public class Payments {
     private static final By TYP_DRUGIEGO_IDENTYFIKATORA = ByAngular.model("formData.formModel.secondaryIdType");
     private static final By IDENTYFIKATOR_UZUPELNIAJACY = ByAngular.model("formData.formModel.secondaryIdNo");
     private static final By NUMER_DECYZJI = ByAngular.model("formData.formModel.decisionNo");
+    private static final By AKCEPTUJ = Buttons.AKCEPTUJ;
 
     private final NavigationMenu navigationMenu;
     private WebDriver driver;
@@ -90,11 +91,11 @@ public class Payments {
         if (dataPrzelewu != null) {
             driver.findElement(DATA).findElement(DATA2).click();
             driver.findElement(DATA).findElement(DATA2).clear();
-            driver.findElement(DATA).findElement(DATA2).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
         }
         driver.findElement(WYSLIJ_PRZELEW).click();
         waitForAngularRequestsToFinish(driver);
-        podpis.AuthorizeTan();
+        podpis.AuthorizeTan(AKCEPTUJ);
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
@@ -116,12 +117,13 @@ public class Payments {
         if (czyPowtarzac)
             driver.findElement(POWTARZAJ).click();
         if (dataPrzelewu != null) {
-            driver.findElement(DATA).clear();
-            driver.findElement(DATA).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
         }
         driver.findElement(WYSLIJ_PRZELEW).click();
         waitForAngularRequestsToFinish(driver);
-        podpis.AuthorizeTan();
+        podpis.AuthorizeTan(AKCEPTUJ);
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
@@ -143,13 +145,14 @@ public class Payments {
         driver.findElement(TYTUL).click();
         driver.findElement(TYTUL).findElement(TYTUL_WEWNATRZ).sendKeys(tytul);
         if (dataPrzelewu != null) {
-            driver.findElement(DATA).clear();
-            driver.findElement(DATA).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
         }
         driver.findElement(PRZEWALUTOWANIE).click();
         driver.findElement(WYSLIJ_PRZELEW).click();
         waitForAngularRequestsToFinish(driver);
-        podpis.AuthorizeTan();
+        podpis.AuthorizeTan(AKCEPTUJ);
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
@@ -185,12 +188,13 @@ public class Payments {
         driver.findElement(IDENTYFIKACJA_ZOBOWIAZAN).sendKeys(identyfikacjaZobowiazan);
         driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).sendKeys(kwota);
         if (dataPrzelewu != null) {
-            driver.findElement(DATA).clear();
-            driver.findElement(DATA).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
         }
         driver.findElement(WYSLIJ_PRZELEW).click();
         waitForAngularRequestsToFinish(driver);
-        podpis.AuthorizeTan();
+        podpis.AuthorizeTan(AKCEPTUJ);
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);
@@ -219,12 +223,13 @@ public class Payments {
         driver.findElement(NUMER_DECYZJI).sendKeys(numerDecyzji);
         driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).sendKeys(kwota);
         if (dataPrzelewu != null) {
-            driver.findElement(DATA).clear();
-            driver.findElement(DATA).sendKeys(DateTimeConversion.ConvertToDateDDMMYYYY(dataPrzelewu));
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
         }
         driver.findElement(WYSLIJ_PRZELEW).click();
         waitForAngularRequestsToFinish(driver);
-        podpis.AuthorizeTan();
+        podpis.AuthorizeTan(AKCEPTUJ);
         waitForAngularRequestsToFinish(driver);
         driver.findElement(UTWORZ_NOWA_PLATNOSC).click();
         waitForAngularRequestsToFinish(driver);

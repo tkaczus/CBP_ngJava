@@ -18,5 +18,6 @@ public final class Buttons {
     public static final By WYSLIJ_AWIZO = ByAngular.buttonText("Wyślij awizo");
     public static final By SPLAC_RATE = ByAngular.buttonText("Spłać ratę");
     public static final By WROC_DO_PULPITU = ByAngular.buttonText("Wróć do pulpitu");
+    public static final By POTWIERDZ_ANULOWANIE = ByAngular.buttonText("Potwierdź anulowanie");
 
 }

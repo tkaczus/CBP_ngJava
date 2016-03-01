@@ -24,6 +24,7 @@ public class Awizo {
     private static final By CHECKBOX = By.xpath("//div[@eb-model='formData.regulation']");
 //    eb-model="formData.regulation"
     private static final By WYSLIJ_AWIZO = Buttons.WYSLIJ_AWIZO;
+    private static final By AKCEPTUJ = Buttons.AKCEPTUJ;
 
 
     private final NavigationMenu navigationMenu;
@@ -63,7 +64,7 @@ public class Awizo {
         driver.findElement(CHECKBOX).click();
         driver.findElement(WYSLIJ_AWIZO).click();
         waitForAngularRequestsToFinish(driver);
-        podpis.AuthorizeTan();
+        podpis.AuthorizeTan(AKCEPTUJ);
         waitForAngularRequestsToFinish(driver);
     }
 

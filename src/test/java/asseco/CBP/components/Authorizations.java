@@ -21,7 +21,7 @@ public class Authorizations {
 	      this.driver =  driver;
 	   }
 	 
-	   public void AuthorizeTan() {
+	   public void AuthorizeTan(By Przycisk) {
 		  try {
 			   driver.findElement(tanX).sendKeys("11");
 			   driver.findElement(tanY).sendKeys("11");
@@ -31,7 +31,7 @@ public class Authorizations {
 //		assertThat(e.getMessage(), startsWith("$scope variable 'locationnnnnnnnn' not found in same scope as the element passed in."));
 		}
 		   finally {
-			  driver.findElement(AKCEPTUJ).click();
+			  driver.findElement(Przycisk).click();
 		  }
 
 	   }
