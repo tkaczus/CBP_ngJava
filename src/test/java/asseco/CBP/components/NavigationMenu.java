@@ -41,6 +41,13 @@ public class NavigationMenu {
         return new Payments(driver);
     }
 
+    public PaymentsActive navigateToPaymentsActive() {
+        OpenMenuIfClosed();
+        driver.findElement(NAVIGATION_ITEM_PAYMENTS).click();
+        waitForAngularRequestsToFinish(driver);
+        return new PaymentsActive(driver);
+    }
+
     public Accounts navigateToAccounts() {
         OpenMenuIfClosed();
         driver.findElement(NAVIGATION_ITEM_ACCOUNTS).click();

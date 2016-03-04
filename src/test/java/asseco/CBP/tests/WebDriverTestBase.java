@@ -74,7 +74,7 @@ public class WebDriverTestBase {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Saved [a href=\"file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "]TestNG Reporter[/a]");
+//        System.out.println("Saved [a href=\"file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "]TestNG Reporter[/a]");
         Reporter.setEscapeHtml(false);
         Reporter.log("Saved [a href=*file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "*]TestNG Reporter[/a]");
     }

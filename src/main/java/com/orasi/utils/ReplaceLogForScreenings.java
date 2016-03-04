@@ -26,11 +26,11 @@ public class ReplaceLogForScreenings {
             //String newtext = oldtext.replaceAll("drink", "Love");
 
             //To replace a line in a file
-            System.out.println(oldtext);
+//            System.out.println(oldtext);
             String newtext = oldtext.replaceAll("]", ">");
             newtext = newtext.replaceAll("\\[", "<");
             newtext = newtext.replaceAll("\\*", "\"");
-            System.out.println(newtext);
+//            System.out.println(newtext);
 
             //c:\Users\lukasz.tkaczyk\workspace\CBP_ngJava\test-output\html\output.html
             FileWriter writer = new FileWriter(System.getProperty("user.dir")+"\\test-output\\html\\output.html");

@@ -65,6 +65,14 @@ public class Payments {
     private static final By IDENTYFIKATOR_UZUPELNIAJACY = ByAngular.model("formData.formModel.secondaryIdNo");
     private static final By NUMER_DECYZJI = ByAngular.model("formData.formModel.decisionNo");
     private static final By AKCEPTUJ = Buttons.AKCEPTUJ;
+    private static final By ZAPISZ_ZMIANY = Buttons.ZAPISZ_ZMIANY;
+    private static final By WROC = ByAngular.cssContainingText(".controls-container","Wróć do pulpitu");
+    //Zlecenie stale
+    private static final By DZIEN_NASTEPNEJ_REALIZACJI = ByAngular.model("formData.formModel.executionDayInMonth");
+    //choice in $select.items
+    private static final By CYKL_REALIZACJI = ByAngular.model("periodCount");
+    private static final By DATA_ZAKONCZENIA = ByAngular.model("endDate");
+    //class="eb-checkbox eb-dbnext-theme"
 
     private final NavigationMenu navigationMenu;
     private WebDriver driver;
@@ -158,6 +166,44 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
     }
 
+    public void edutujZlecenieStale(String kwota,String tytul, String dzienNastepnejRealizacji, String cyklRealizacji, String dataZakonczenia ){
+        driver.findElement(TYTUL).clear();
+        driver.findElement(TYTUL).findElement(TYTUL_WEWNATRZ).sendKeys(tytul);
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).clear();
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).sendKeys(kwota);
+        driver.findElement(DZIEN_NASTEPNEJ_REALIZACJI).click();
+        findNgRepeatAndClick("choice in $select.items", dzienNastepnejRealizacji);
+        driver.findElement(CYKL_REALIZACJI).clear();
+        driver.findElement(CYKL_REALIZACJI).sendKeys(cyklRealizacji);
+        driver.findElement(DATA_ZAKONCZENIA).click();
+        driver.findElement(DATA_ZAKONCZENIA).clear();
+        driver.findElement(DATA_ZAKONCZENIA).sendKeys(dataZakonczenia);
+        driver.findElement(ZAPISZ_ZMIANY).click();
+        waitForAngularRequestsToFinish(driver);
+        podpis.AuthorizeTan(AKCEPTUJ);
+        waitForAngularRequestsToFinish(driver);
+        driver.findElement(WROC).click();
+        waitForAngularRequestsToFinish(driver);
+    }
+
+    public void edutujPrzelewOdroczony(String kwota,String tytul, String dataPrzelewu){
+        driver.findElement(TYTUL).clear();
+        driver.findElement(TYTUL).findElement(TYTUL_WEWNATRZ).sendKeys(tytul);
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).clear();
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).sendKeys(kwota);
+        if (dataPrzelewu != null) {
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
+        }
+        driver.findElement(ZAPISZ_ZMIANY).click();
+        waitForAngularRequestsToFinish(driver);
+        podpis.AuthorizeTan(AKCEPTUJ);
+        waitForAngularRequestsToFinish(driver);
+        driver.findElement(WROC).click();
+        waitForAngularRequestsToFinish(driver);
+    }
+
     public void uzupelnijPrzelewUS(String miasto, String urzadSkarbowy, String grupaPodatkowa, String symbolFormularza, String typOkresu, String numerOkresu,
                                    String rokOkresu, String typIdentyfikatora, String identyfikator, String zRachunku, String identyfikacjaZobowiazan, String kwota, String dataPrzelewu) {
         driver.findElement(NOWA_PLATNOSC).click();
@@ -200,6 +246,22 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
     }
 
+    public void edutujPrzelewUS(String kwota, String dataPrzelewu){
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).clear();
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).sendKeys(kwota);
+        if (dataPrzelewu != null) {
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
+        }
+        driver.findElement(ZAPISZ_ZMIANY).click();
+        waitForAngularRequestsToFinish(driver);
+        podpis.AuthorizeTan(AKCEPTUJ);
+        waitForAngularRequestsToFinish(driver);
+        driver.findElement(WROC).click();
+        waitForAngularRequestsToFinish(driver);
+    }
+
     public void uzupelnijPrzelewZUS(String numerRachunkuZUS, String typWplaty, String deklaracja, String numerDeklaracji, String nipPlatnika, String typIdentyfikatoraUzupelniajacego,
                                     String identyfikatorUzupelniajacy, String zRachunku, String numerDecyzji, String kwota, String dataPrzelewu) {
         driver.findElement(NOWA_PLATNOSC).click();
@@ -235,6 +297,21 @@ public class Payments {
         waitForAngularRequestsToFinish(driver);
     }
 
+    public void edutujPrzelewZUS(String kwota, String dataPrzelewu){
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).clear();
+        driver.findElement(KWOTA).findElement(KWOTA_WEWNATRZ).sendKeys(kwota);
+        if (dataPrzelewu != null) {
+            driver.findElement(DATA).findElement(DATA2).click();
+            driver.findElement(DATA).findElement(DATA2).clear();
+            driver.findElement(DATA).findElement(DATA2).sendKeys(dataPrzelewu);
+        }
+        driver.findElement(ZAPISZ_ZMIANY).click();
+        waitForAngularRequestsToFinish(driver);
+        podpis.AuthorizeTan(AKCEPTUJ);
+        waitForAngularRequestsToFinish(driver);
+        driver.findElement(WROC).click();
+        waitForAngularRequestsToFinish(driver);
+    }
 
     public NavigationMenu navigationMenu() {
         return navigationMenu;

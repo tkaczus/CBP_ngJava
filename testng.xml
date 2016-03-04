@@ -10,6 +10,7 @@
             <class name="asseco.CBP.tests.PaymentsActiveOneSession"/>
             <!--class name="asseco.CBP.tests.PaymentsOneSession"/>
             <class name="asseco.CBP.tests.AwizoOneSession"/>
+            <class name="asseco.CBP.tests.AccountsOneSession"/>
             <class name="asseco.CBP.tests.DepositsOneSession"/>
             <class name="asseco.CBP.tests.CreditsOneSession"/-->
         </classes>
