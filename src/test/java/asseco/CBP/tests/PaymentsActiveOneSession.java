@@ -1,8 +1,7 @@
 package asseco.CBP.tests;
 
-import asseco.CBP.components.asseco.CBP.dataDriven.ClientData;
+import asseco.CBP.dataDriven.ClientData;
 import asseco.CBP.pages.Payments;
-import asseco.CBP.pages.PaymentsActive;
 import com.orasi.utils.date.SimpleDate;
 import com.orasi.utils.types.Helpers;
 import org.testng.annotations.Test;
