@@ -2,6 +2,7 @@ package asseco.CBP.tests;
 
 import asseco.CBP.dataDriven.ClientData;
 import asseco.CBP.pages.Payments;
+import asseco.CBP.pages.PaymentsActive;
 import com.orasi.utils.date.SimpleDate;
 import com.orasi.utils.types.Helpers;
 import org.testng.annotations.Test;
@@ -50,12 +51,12 @@ public class PaymentsActiveOneSession extends WebDriverTestBase {
         ClientData user = new ClientData();
         String nrb= user.getNrb();
         System.out.println("nrb="+nrb);
-//        Payments payments = homePage.navigationMenu().navigateToPayments();
-//        payments.uzupelnijPrzelewZUS("83 1010 1023 0000 2613 9510 0000","Opłata dodatkowa za błędy płatnika - A","012015","01","1111111111","PESEL (P)","83062417395","58","01",kwota,dataS);
-//        Thread.sleep(60000);
-//        PaymentsActive activePayments = homePage.navigationMenu().navigateToPaymentsActive();
-//        activePayments.wyszukajPlatnoscPoTekscie(kwota);
-//        activePayments.kliknijWAnuluj();
+        Payments payments = homePage.navigationMenu().navigateToPayments();
+        payments.uzupelnijPrzelewZUS("83 1010 1023 0000 2613 9510 0000","Opłata dodatkowa za błędy płatnika - A","012015","01","1111111111","PESEL (P)","83062417395",nrb,"01",kwota,dataS);
+        Thread.sleep(60000);
+        PaymentsActive activePayments = homePage.navigationMenu().navigateToPaymentsActive();
+        activePayments.wyszukajPlatnoscPoTekscie(kwota);
+        activePayments.kliknijWAnuluj();
     }
 
 

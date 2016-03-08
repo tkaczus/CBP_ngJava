@@ -2,6 +2,7 @@ package asseco.CBP.dataDriven;
 
 import com.orasi.utils.database.Database;
 import com.orasi.utils.database.databaseImpl.OracleDatabase;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,13 +26,13 @@ public class ClientData {
     private Database db = null;
 
     public ClientData(){
-
         db = new OracleDatabase(host, port, database);
         db.setDbUserName(username);
         db.setDbPassword(password);
     }
 
-    public String getNrb()  {
+    @NotNull
+    private Properties returnFromProperties() {
         Properties obj = new Properties();
         FileInputStream objfile = null;
         try {
@@ -44,18 +45,49 @@ public class ClientData {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return obj;
+    }
+    public String getNrb()  {
+        Properties obj = returnFromProperties();
         System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
-        String sql="select * from customers";
+        String sql="select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
+                "'"+obj.getProperty("USER_LOGIN")+"'" +
+                " and t.modulo in \n" +
+                "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
+                "and t.typ_produktu='R' and t.status_umowy='AK' and r.id_rachunku=t.id_umowy and t.waluta='PLN'\n" +
+                "group by t.id_umowy,r.dostepne_srodki,t.nrb \n" +
+                "HAVING SUM(r.dostepne_srodki) > 10000\n" +
+                "order by r.dostepne_srodki desc";
         Object[][] wynik=db.getResultSet(sql);
-        return nrb= wynik[1][0].toString();
+        return nrb= wynik[1][0].toString().substring(0,2);
     }
 
+
     public String getNrbEUR() {
-        return nrbEUR;
+        Properties obj = returnFromProperties();
+        System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
+        String sql="select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
+                "'"+obj.getProperty("USER_LOGIN")+"'" +
+                " and t.modulo in \n" +
+                "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
+                "and t.typ_produktu='R' and t.status_umowy='AK' and r.id_rachunku=t.id_umowy and t.waluta='EUR'\n" +
+                "group by t.id_umowy,r.dostepne_srodki,t.nrb \n" +
+                "HAVING SUM(r.dostepne_srodki) > 100\n" +
+                "order by r.dostepne_srodki desc";
+        Object[][] wynik=db.getResultSet(sql);
+        return nrbEUR= wynik[1][0].toString().substring(0,2);
     }
 
     public String getNrbCredit() {
-        return nrbCredit;
+        Properties obj = returnFromProperties();
+        System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
+        String sql="select t.nrb, t.id_umowy,k.oproc_trans_ratalnych from UMOWA t , KREDYT k , Uzytkownik u where " +
+                "u.login='"+obj.getProperty("USER_LOGIN")+"' " +
+                "and t.modulo in \n" +
+                "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
+                "and t.typ_produktu='K' and t.status_umowy='AK' and k.id_kredytu=t.id_umowy ";
+        Object[][] wynik=db.getResultSet(sql);
+        return nrbCredit= wynik[1][0].toString().substring(0,2);
     }
 
 }
