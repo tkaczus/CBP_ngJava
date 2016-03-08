@@ -1,10 +1,10 @@
 package com.orasi.utils;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import org.apache.commons.lang3.RandomStringUtils;
 
 public class Randomness {
 

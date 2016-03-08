@@ -1,12 +1,9 @@
 package asseco.CBP.components;
 
 import asseco.CBP.pages.*;
+import com.paulhammant.ngwebdriver.ByAngular;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.paulhammant.ngwebdriver.ByAngular;
 
 import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 

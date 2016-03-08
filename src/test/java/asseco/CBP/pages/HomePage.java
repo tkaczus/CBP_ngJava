@@ -1,8 +1,9 @@
 package asseco.CBP.pages;
 
-import org.openqa.selenium.WebDriver;
-import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 import asseco.CBP.components.NavigationMenu;
+import org.openqa.selenium.WebDriver;
+
+import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 
 public class HomePage {
 	private static final String CBP_HOME_PAGE_URL = "http://10.17.201.79:17017/frontend-web/app/auth.html#/de/authentication/login";

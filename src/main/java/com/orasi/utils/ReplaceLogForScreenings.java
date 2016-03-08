@@ -1,7 +1,6 @@
 package com.orasi.utils;
 
 import java.io.*;
-import java.lang.String;
 /**
  * Created by Lukasz.Tkaczyk on 2016-02-17.
  */

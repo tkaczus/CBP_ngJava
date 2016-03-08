@@ -1,13 +1,12 @@
 package asseco.CBP.pages;
 
-import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
-
 import asseco.CBP.components.Buttons;
-import com.paulhammant.ngwebdriver.ByAngular;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;
 
 public class LoginPage {
 	private static final By USERNAME = By.id("j_username");

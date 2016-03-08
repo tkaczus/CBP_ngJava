@@ -6,9 +6,6 @@ import asseco.CBP.components.NavigationMenu;
 import com.paulhammant.ngwebdriver.ByAngular;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 import static asseco.CBP.tests.WebDriverTestBase.findNgRepeatAndClick;
 import static com.paulhammant.ngwebdriver.WaitForAngularRequestsToFinish.waitForAngularRequestsToFinish;

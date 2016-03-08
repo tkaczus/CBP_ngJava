@@ -4,7 +4,6 @@ import asseco.CBP.components.Buttons;
 import asseco.CBP.components.NavigationMenu;
 import com.paulhammant.ngwebdriver.ByAngular;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 

@@ -1,9 +1,8 @@
 package com.orasi.utils;
 
+import com.orasi.utils.date.SimpleDate;
 import org.testng.Assert;
 import org.testng.Reporter;
-
-import com.orasi.utils.date.SimpleDate;
 
 public class TestReporter {
     private static boolean printToConsole = false;

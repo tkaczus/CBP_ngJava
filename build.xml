@@ -1,0 +1,42 @@
+<project basedir="." default="build" name="Ant Play">
+    <property name="classes.dir" value="bin" />
+    <property name="report.dir" value="test-output" />
+    <path id="classpath">
+        <fileset dir="lib">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement path="${basedir}\${classes.dir}"/>
+    </path>
+    <target name="init">
+        <mkdir dir="${classes.dir}"/>
+        <copy includeemptydirs="false" todir="${classes.dir}">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="${classes.dir}"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-project" name="build"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" includeantruntime="false" destdir="${classes.dir}">
+            <src path="src"/>
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+    <target  depends="build" name="runTests" description="Running tests" >
+        <echo>Running Tests...</echo>
+        <taskdef resource="testngtasks" classpathref="classpath"/>
+        <testng outputDir="${report.dir}"
+                haltonfailure="true"
+                useDefaultListeners="false"
+                listeners="org.uncommons.reportng.HTMLReporter"
+                classpathref="classpath">
+            <xmlfileset dir="${basedir}" includes="testng.xml"/>
+            <!--<classfileset dir="${classes.dir}" includes="**/*.class" />-->
+        </testng>
+    </target>
+</project>

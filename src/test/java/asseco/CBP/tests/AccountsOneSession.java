@@ -1,7 +1,6 @@
 package asseco.CBP.tests;
 
 import asseco.CBP.pages.Accounts;
-import asseco.CBP.pages.Awizo;
 import org.testng.annotations.Test;
 
 import java.io.IOException;

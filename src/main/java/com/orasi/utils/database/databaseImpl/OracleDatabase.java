@@ -1,6 +1,5 @@
 package com.orasi.utils.database.databaseImpl;
 
-import com.orasi.utils.Constants;
 import com.orasi.utils.database.Database;
 
 public class OracleDatabase extends Database {

@@ -1,11 +1,11 @@
 package com.orasi.utils;
 
-import java.sql.Timestamp;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+
+import java.sql.Timestamp;
 
 public class AlertHandler {
 	
