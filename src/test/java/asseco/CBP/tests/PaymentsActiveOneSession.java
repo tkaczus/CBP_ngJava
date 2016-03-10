@@ -15,6 +15,8 @@ public class PaymentsActiveOneSession extends WebDriverTestBase {
     private SimpleDate data = new SimpleDate();
     private String kwota = Helpers.losujKwote();
     private String tytul = Helpers.zwrocUID();
+    ClientData user = new ClientData();
+    String nrb = user.getNrb();
 
     @Test(enabled = false)
     public void testPrzelewZwyklyOdroczony() throws IOException {
@@ -35,12 +37,12 @@ public class PaymentsActiveOneSession extends WebDriverTestBase {
     }
 
     @Test(enabled = false)
-    public void testPrzelewUSOdroczony(){
+    public void testPrzelewUSOdroczony() {
         data.advanceDay(1);
         kwota = Helpers.losujKwote();
         String dataS = data.toString("dd.MM.yyyy");
         Payments payments = homePage.navigationMenu().navigateToPayments();
-        payments.uzupelnijPrzelewUS("Augustów", "Urząd Skarbowy", "1 - CIT", "CIT","Kwartał (K)","1","2015","NIP","1111111111","58","tst",kwota,dataS);
+        payments.uzupelnijPrzelewUS("Augustów", "Urząd Skarbowy", "1 - CIT", "CIT", "Kwartał (K)", "1", "2015", "NIP", "1111111111", "58", "tst", kwota, dataS);
     }
 
     @Test(enabled = true)
@@ -48,16 +50,15 @@ public class PaymentsActiveOneSession extends WebDriverTestBase {
         data.advanceDay(1);
         kwota = Helpers.losujKwote();
         String dataS = data.toString("dd.MM.yyyy");
-        ClientData user = new ClientData();
-        String nrb= user.getNrb();
-        System.out.println("nrb="+nrb);
+
+
+        System.out.println("nrb=" + nrb);
         Payments payments = homePage.navigationMenu().navigateToPayments();
-        payments.uzupelnijPrzelewZUS("83 1010 1023 0000 2613 9510 0000","Opłata dodatkowa za błędy płatnika - A","012015","01","1111111111","PESEL (P)","83062417395",nrb,"01",kwota,dataS);
+        payments.uzupelnijPrzelewZUS("83 1010 1023 0000 2613 9510 0000", "Opłata dodatkowa za błędy płatnika - A", "012015", "01", "1111111111", "PESEL (P)", "83062417395", nrb, "01", kwota, dataS);
         Thread.sleep(60000);
         PaymentsActive activePayments = homePage.navigationMenu().navigateToPaymentsActive();
         activePayments.wyszukajPlatnoscPoTekscie(kwota);
         activePayments.kliknijWAnuluj();
     }
-
 
 }

@@ -25,7 +25,7 @@ public class ClientData {
     private static String password = "admin";
     private Database db = null;
 
-    public ClientData(){
+    public ClientData() {
         db = new OracleDatabase(host, port, database);
         db.setDbUserName(username);
         db.setDbPassword(password);
@@ -47,47 +47,61 @@ public class ClientData {
         }
         return obj;
     }
-    public String getNrb()  {
+
+    /**
+     * Zwraca dwa piersze znaki numeru nrb PLN dla podanego loginu
+     * jesli znadzie rachunki o dostenpnych srodkach > 10000 PLN
+     * @return
+     */
+    public String getNrb() {
         Properties obj = returnFromProperties();
         System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
-        String sql="select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
-                "'"+obj.getProperty("USER_LOGIN")+"'" +
+        String sql = "select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
+                "'" + obj.getProperty("USER_LOGIN") + "'" +
                 " and t.modulo in \n" +
                 "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
                 "and t.typ_produktu='R' and t.status_umowy='AK' and r.id_rachunku=t.id_umowy and t.waluta='PLN'\n" +
                 "group by t.id_umowy,r.dostepne_srodki,t.nrb \n" +
                 "HAVING SUM(r.dostepne_srodki) > 10000\n" +
                 "order by r.dostepne_srodki desc";
-        Object[][] wynik=db.getResultSet(sql);
-        return nrb= wynik[1][0].toString().substring(0,2);
+        Object[][] wynik = db.getResultSet(sql);
+        return nrb = wynik[1][0].toString().substring(0, 2);
     }
 
-
+    /**
+     * Zwraca dwa piersze znaki numeru nrb w EUR dla podanego loginu
+     * jesli znadzie rachunki o dostenpnych srodkach > 100 EUR
+     * @return
+     */
     public String getNrbEUR() {
         Properties obj = returnFromProperties();
         System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
-        String sql="select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
-                "'"+obj.getProperty("USER_LOGIN")+"'" +
+        String sql = "select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
+                "'" + obj.getProperty("USER_LOGIN") + "'" +
                 " and t.modulo in \n" +
                 "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
                 "and t.typ_produktu='R' and t.status_umowy='AK' and r.id_rachunku=t.id_umowy and t.waluta='EUR'\n" +
                 "group by t.id_umowy,r.dostepne_srodki,t.nrb \n" +
                 "HAVING SUM(r.dostepne_srodki) > 100\n" +
                 "order by r.dostepne_srodki desc";
-        Object[][] wynik=db.getResultSet(sql);
-        return nrbEUR= wynik[1][0].toString().substring(0,2);
+        Object[][] wynik = db.getResultSet(sql);
+        return nrbEUR = wynik[1][0].toString().substring(0, 2);
     }
 
+    /**
+     * Zwraca numer nrb dowolnego kredytu dla podanego loginu
+     * @return
+     */
     public String getNrbCredit() {
         Properties obj = returnFromProperties();
         System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
-        String sql="select t.nrb, t.id_umowy,k.oproc_trans_ratalnych from UMOWA t , KREDYT k , Uzytkownik u where " +
-                "u.login='"+obj.getProperty("USER_LOGIN")+"' " +
+        String sql = "select t.nrb, t.id_umowy,k.oproc_trans_ratalnych from UMOWA t , KREDYT k , Uzytkownik u where " +
+                "u.login='" + obj.getProperty("USER_LOGIN") + "' " +
                 "and t.modulo in \n" +
                 "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
                 "and t.typ_produktu='K' and t.status_umowy='AK' and k.id_kredytu=t.id_umowy ";
-        Object[][] wynik=db.getResultSet(sql);
-        return nrbCredit= wynik[1][0].toString().substring(0,2);
+        Object[][] wynik = db.getResultSet(sql);
+        return nrbCredit = wynik[1][0].toString();
     }
 
 }

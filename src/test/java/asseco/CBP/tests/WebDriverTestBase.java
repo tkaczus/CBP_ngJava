@@ -1,10 +1,9 @@
 package asseco.CBP.tests;
 
 import asseco.CBP.pages.HomePage;
-import com.orasi.utils.ReplaceLogForScreenings;
+import com.google.common.io.Files;
 import com.paulhammant.ngwebdriver.ByAngular;
 import com.paulhammant.ngwebdriver.NgWebDriver;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,9 +17,6 @@ import org.testng.reporters.EmailableReporter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -58,25 +54,25 @@ public class WebDriverTestBase {
     @AfterSuite
     public void replaceOutput() {
         System.out.println("@AfterSuite");
-        ReplaceLogForScreenings.replaceOutput();
     }
 
     @AfterMethod(alwaysRun = true)
-    public void onTestFailure(ITestResult tr) {
+    public void onTestFailure(ITestResult result) throws IOException {
         System.out.println("@AfterMethod");
-        File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        DateFormat dateFormat = new SimpleDateFormat("dd_MMM_yyyy__hh_mm_ssaa");
-        String destDir = "test-output\\screenshots";
-        new File(destDir).mkdirs();
-        String destFile = tr.getName() + "_" + dateFormat.format(new Date()) + ".png";
-        try {
-            FileUtils.copyFile(scrFile, new File(destDir + "/" + destFile));
-        } catch (IOException e) {
-            e.printStackTrace();
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+        if (!result.isSuccess()) {
+            File screenshot1 = new File("test-output\\screenshots" + result.getMethod().getMethodName() + ".png");
+//            screenshot1.delete();
+            File screenshotTempFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            try {
+                Files.copy(screenshotTempFile, screenshot1);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            Reporter.log("<a href=\"" + screenshot1.getCanonicalPath() + "\">" + result.getMethod().getMethodName() + "Screenshot</a>");
+            Reporter.setEscapeHtml(false);
+            Reporter.log("<a>");
         }
-//        System.out.println("Saved [a href=\"file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "]TestNG Reporter[/a]");
-        Reporter.setEscapeHtml(false);
-        Reporter.log("Saved [a href=*file:///C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/test-output/ScreenShots/" + destFile + "*]TestNG Reporter[/a]");
     }
 
     public void Zaloguj() throws IOException {
@@ -96,9 +92,7 @@ public class WebDriverTestBase {
                 System.out.println("Wybralo z listy element=" + item.getText());
                 item.click();
                 break;
-            }
-            else
-            {
+            } else {
                 System.out.println("!! Nie znalazło na lisćie" + item.getText());
             }
         }

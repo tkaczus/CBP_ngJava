@@ -7,6 +7,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <systemProperties>
+        <property>
+            <name>org.uncommons.reportng.escape-output</name>
+            <value>true</value>
+        </property>
+    </systemProperties>
     <name>ngTest</name>
     <url>http://maven.apache.org</url>
 
