@@ -71,7 +71,7 @@ public class WebDriverTestBase {
             }
 //            Reporter.log("<a href=\"" + screenshot1.getCanonicalPath() + "\">" + result.getMethod().getMethodName() + "Screenshot</a>");
             Reporter.log("<font color=\"#00bfff\">" + result.getMethod().getMethodName() + "</font><br />");
-            Reporter.log("<img src=\"" + screenshot1.getName() + "\" style=\"width:1051px;height:679px;\" alt=\"\"/><br />");
+            Reporter.log("<img src=\"" + screenshot1.getName() + "\" style=\"width:1051px;height:679px;\" border=\"1\" alt=\"\"/><br />");
             Reporter.setEscapeHtml(false);
             Reporter.log("<a>");
         }

@@ -7,12 +7,12 @@
     </listeners>
     <test name="Test">
         <classes>
-            <!--<class name="asseco.CBP.tests.PaymentsActiveOneSession"/>-->
-            <!--&lt;!&ndash;class name="asseco.CBP.tests.PaymentsOneSession"/>-->
-            <!--<class name="asseco.CBP.tests.AwizoOneSession"/>-->
+            <class name="asseco.CBP.tests.PaymentsActiveOneSession"/>
+            <class name="asseco.CBP.tests.PaymentsOneSession"/>
+            <class name="asseco.CBP.tests.AwizoOneSession"/>
             <class name="asseco.CBP.tests.AccountsOneSession"/>
-            <!--<class name="asseco.CBP.tests.DepositsOneSession"/>-->
-            <!--<class name="asseco.CBP.tests.CreditsOneSession"/>-->
+            <class name="asseco.CBP.tests.DepositsOneSession"/>
+            <class name="asseco.CBP.tests.CreditsOneSession"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

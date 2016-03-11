@@ -50,8 +50,7 @@ public class PaymentsActiveOneSession extends WebDriverTestBase {
         data.advanceDay(1);
         kwota = Helpers.losujKwote();
         String dataS = data.toString("dd.MM.yyyy");
-
-
+        
         System.out.println("nrb=" + nrb);
         Payments payments = homePage.navigationMenu().navigateToPayments();
         payments.uzupelnijPrzelewZUS("83 1010 1023 0000 2613 9510 0000", "Opłata dodatkowa za błędy płatnika - A", "012015", "01", "1111111111", "PESEL (P)", "83062417395", nrb, "01", kwota, dataS);
