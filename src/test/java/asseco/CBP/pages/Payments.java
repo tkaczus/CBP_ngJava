@@ -24,7 +24,7 @@ public class Payments {
     private static final By PRZELEW_DO_ZUS = ByAngular.repeater("type in $select.items").row(5);
     private static final By ODBIORCA = ByAngular.model("formData.formModel");
     private static final By ODBIORCA2 = By.name("templateSelect");
-    private static final By RACHUNEK_ODBIORCY = ByAngular.model("formData.formModel.recipientAccountNo1");
+    private static final By RACHUNEK_ODBIORCY = ByAngular.model("formData.formModel.recipientAccountNo");
     private static final By KWOTA = ByAngular.model("formData.formModel.amount");
     private static final By KWOTA_WEWNATRZ = By.name("amount");
     private static final By TYTUL = ByAngular.model("formData.formModel.description");
