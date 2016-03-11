@@ -25,6 +25,7 @@
     <target depends="init" name="build-project">
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac executable="${javac1.8}"  fork="yes" debug="true" includeantruntime="false" destdir="${classes.dir}" encoding="utf-8">
+            <compilerarg value="-Xlint:unchecked"/>
             <src path="src"/>
             <classpath refid="classpath"/>
         </javac>
