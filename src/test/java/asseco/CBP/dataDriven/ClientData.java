@@ -54,18 +54,27 @@ public class ClientData {
      * @return
      */
     public String getNrb() {
-        Properties obj = returnFromProperties();
-        System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
-        String sql = "select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
-                "'" + obj.getProperty("USER_LOGIN") + "'" +
-                " and t.modulo in \n" +
-                "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
-                "and t.typ_produktu='R' and t.status_umowy='AK' and r.id_rachunku=t.id_umowy and t.waluta='PLN'\n" +
-                "group by t.id_umowy,r.dostepne_srodki,t.nrb \n" +
-                "HAVING SUM(r.dostepne_srodki) > 10000\n" +
-                "order by r.dostepne_srodki desc";
-        Object[][] wynik = db.getResultSet(sql);
-        return nrb = wynik[1][0].toString().substring(0, 2);
+        Object[][] wynik = new Object[0][];
+        try {
+            Properties obj = returnFromProperties();
+            System.out.println("USER_LOGIN=" + obj.getProperty("USER_LOGIN"));
+            String sql = "select t.nrb, t.id_umowy,r.dostepne_srodki from UMOWA t , RACHUNEK r , Uzytkownik u where u.login=" +
+                    "'" + obj.getProperty("USER_LOGIN") + "'" +
+                    " and t.modulo in \n" +
+                    "(select t.modulo from WEKTOR_AUTORYZACJI t where t.id_uzytkownika=u.id_uzytkownika and t.typ_operacji='OWNR' and t.typ_produktu='R')\n" +
+                    "and t.typ_produktu='R' and t.status_umowy='AK' and r.id_rachunku=t.id_umowy and t.waluta='PLN'\n" +
+                    "group by t.id_umowy,r.dostepne_srodki,t.nrb \n" +
+                    "HAVING SUM(r.dostepne_srodki) > 10000\n" +
+                    "order by r.dostepne_srodki desc";
+            wynik = db.getResultSet(sql);
+            nrb = wynik[1][0].toString().substring(0, 2);
+        }
+        catch (java.lang.ArrayIndexOutOfBoundsException e){
+            System.out.println("BRAK USERA W BAZIE !!!");
+            throw new org.testng.TestNGException("BRAK USERA W BAZIE !!!");
+        }
+        return nrb;
+//        return nrb = wynik[1][0].toString().substring(0, 2);
     }
 
     /**
