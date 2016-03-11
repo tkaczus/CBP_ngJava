@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26c7bb66-9726-4832-adb0-aa9949f6fea4" name="Default" comment="database DAO + ClientClass">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build_home.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-output/html/output1.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/WebDriverTestBase.class" afterPath="$PROJECT_DIR$/target/test-classes/asseco/CBP/tests/WebDriverTestBase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java" afterPath="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/emailable-report.html" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/output.html" afterPath="$PROJECT_DIR$/test-output/html/output.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/overview.html" afterPath="$PROJECT_DIR$/test-output/html/overview.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/html/suite1_test1_results.html" afterPath="$PROJECT_DIR$/test-output/html/suite1_test1_results.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-output/xml/asseco.CBP.tests.PaymentsActiveOneSession_results.xml" afterPath="$PROJECT_DIR$/test-output/xml/asseco.CBP.tests.PaymentsActiveOneSession_results.xml" />
     </list>
     <list id="1fcf274e-2a90-48eb-8083-f672feac09af" name="New changelist" comment="" />
     <ignored path="CBP_ngJava.iws" />
@@ -43,16 +49,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15454546">
-              <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,6 +57,36 @@
               <folding>
                 <element signature="n#plugin#1;n#plugins#0;n#pluginManagement#0;n#build#0;n#project#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebDriverTestBase.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37913042">
+              <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditsOneSession.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/CreditsOneSession.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Credits.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Credits.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/orasi/utils/ScreenShotOnFailure.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/DepositsOneSession.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Credits.java" />
-        <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/CreditsOneSession.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/AwizoOneSession.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/PaymentsWithLoginLogout.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Deposits.java" />
@@ -136,7 +161,6 @@
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/components/asseco/CBP/dataDriven/ClientData.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/dataDriven/ClientData.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/PaymentsActiveOneSession.java" />
-        <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Payments.java" />
         <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/pages/HomePage.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.user.properties" />
@@ -145,6 +169,8 @@
         <option value="$PROJECT_DIR$/build_home.xml" />
         <option value="$PROJECT_DIR$/testng.xml" />
         <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/CreditsOneSession.java" />
+        <option value="$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java" />
       </list>
     </option>
   </component>
@@ -765,12 +791,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="C__Users_lukasz_tkaczyk_workspace_CBP_ngJava_testng_xml - 2016.03.09 at 15h 57m 04s.xml">
-      <configuration name="C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/testng.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="C__Users_lukasz_tkaczyk_workspace_CBP_ngJava_testng_xml - 2016.03.11 at 10h 02m 45s.xml">
-      <configuration name="C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/testng.xml" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="C__Users_lukasz_tkaczyk_workspace_CBP_ngJava_testng_xml - 2016.03.11 at 10h 17m 18s.xml">
       <configuration name="C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/testng.xml" configurationId="TestNG" />
     </history-entry>
@@ -795,6 +815,12 @@
     <history-entry file="C__Users_lukasz_tkaczyk_workspace_CBP_ngJava_testng_xml - 2016.03.11 at 11h 39m 06s.xml">
       <configuration name="C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/testng.xml" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="C__Users_lukasz_tkaczyk_workspace_CBP_ngJava_testng_xml - 2016.03.11 at 13h 17m 25s.xml">
+      <configuration name="C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/testng.xml" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="C__Users_lukasz_tkaczyk_workspace_CBP_ngJava_testng_xml - 2016.03.11 at 13h 38m 12s.xml">
+      <configuration name="C:/Users/lukasz.tkaczyk/workspace/CBP_ngJava/testng.xml" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -811,12 +837,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.4936034" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32664436" sideWeight="0.37846482" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.37846482" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32664436" sideWeight="0.6215352" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277592" sideWeight="0.43283582" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21850613" sideWeight="0.45255864" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3277592" sideWeight="0.56929636" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277592" sideWeight="0.5671642" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.4936034" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21002132" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1070,13 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Credits.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/paulhammant/ngwebdriver/WaitForAngularRequestsToFinish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.44347826">
@@ -1116,16 +1135,6 @@
         <state vertical-scroll-proportion="0.27919707">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3026087">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1193,14 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/CreditsOneSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11805555">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/AccountsOneSession.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.11805555">
@@ -1235,6 +1236,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/pages/Credits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="16" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/CreditsOneSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7431694">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846">
@@ -1243,10 +1268,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
+    <entry file="file://$PROJECT_DIR$/src/test/java/asseco/CBP/tests/WebDriverTestBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15454546">
-          <caret line="5" column="26" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.37913042">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
           <folding />
         </state>
       </provider>

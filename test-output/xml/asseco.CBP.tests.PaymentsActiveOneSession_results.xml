@@ -1,59 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuite name="Test"
            tests="1"
-           failures="1"
+           failures="0"
            errors="0"
            skipped="0"
-           time="0,014">
+           time="178,246">
   <properties />
-            <testcase name="testPrzelewZUSOdroczony" time="0,014" classname="asseco.CBP.tests.PaymentsActiveOneSession">
-                <failure type="org.openqa.selenium.NoSuchElementException"
-                  message="repeater(element in elements).row(2) didn&apos;t have any matching elements at this place in the DOM
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;2.49.1&apos;, revision: &apos;808c23b0963853d375cbe54b90bbd052e2528a54&apos;, time: &apos;2016-01-21 09:37:52&apos;
-System info: host: &apos;aps00062837-mb&apos;, ip: &apos;172.20.22.253&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_66&apos;
-Driver info: driver.version: RemoteWebDriver"
-              >
-<![CDATA[org.openqa.selenium.NoSuchElementException: repeater(element in elements).row(2) didn't have any matching elements at this place in the DOM
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '2.49.1', revision: '808c23b0963853d375cbe54b90bbd052e2528a54', time: '2016-01-21 09:37:52'
-System info: host: 'aps00062837-mb', ip: '172.20.22.253', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_66'
-Driver info: driver.version: RemoteWebDriver
-  com.paulhammant.ngwebdriver.ByAngular$BaseBy.errorIfNull(ByAngular.java:140)
-  com.paulhammant.ngwebdriver.ByAngular$BaseBy.findElement(ByAngular.java:151)
-  com.paulhammant.ngwebdriver.ByAngularRepeaterRow.findElement(ByAngularRepeaterRow.java:9)
-  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-  asseco.CBP.components.NavigationMenu.OpenMenuIfClosed(NavigationMenu.java:28)
-  asseco.CBP.components.NavigationMenu.navigateToPayments(NavigationMenu.java:35)
-  asseco.CBP.tests.PaymentsActiveOneSession.testPrzelewZUSOdroczony(PaymentsActiveOneSession.java:56)
-  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-  sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-  sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-  java.lang.reflect.Method.invoke(Unknown Source)
-  org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-  org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-  org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-  org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-  org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-  org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-  org.testng.TestRunner.privateRun(TestRunner.java:782)
-  org.testng.TestRunner.run(TestRunner.java:632)
-  org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-  org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-  org.testng.SuiteRunner.run(SuiteRunner.java:268)
-  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-  org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-  org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-  org.testng.TestNG.run(TestNG.java:1064)
-  org.testng.TestNG.privateMain(TestNG.java:1385)
-  org.testng.TestNG.main(TestNG.java:1354)
-]]>
-      </failure>
-
-          </testcase>
   
   
-  
+            <testcase name="testPrzelewZUSOdroczony" time="178,246" classname="asseco.CBP.tests.PaymentsActiveOneSession" />
+      
 </testsuite>
