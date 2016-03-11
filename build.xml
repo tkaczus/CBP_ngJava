@@ -1,8 +1,8 @@
 <project basedir="." default="build" name="Ant Play">
     <property name="classes.dir" value="bin" />
     <property name="report.dir" value="test-output" />
-    <!--<property name="JDK1.8.dir" location="Q:/Repozytorium/angular/jdk1.8.0_71" />-->
-    <property name="JDK1.8.dir" location="c:\Program Files (x86)\Java\jdk1.8.0_71" />
+    <property name="JDK1.8.dir" location="Q:/Repozytorium/angular/jdk1.8.0_71" />
+    <!--<property name="JDK1.8.dir" location="c:\Program Files (x86)\Java\jdk1.8.0_71" />-->
     <property name="javac1.8" location="${JDK1.8.dir}/bin/javac" />
     <path id="classpath">
         <fileset dir="lib">
