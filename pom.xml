@@ -7,12 +7,6 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <systemProperties>
-        <property>
-            <name>org.uncommons.reportng.escape-output</name>
-            <value>true</value>
-        </property>
-    </systemProperties>
     <name>ngTest</name>
     <url>http://maven.apache.org</url>
 
@@ -151,6 +145,10 @@
                                 <value>org.uncommons.reportng.HTMLReporter, org.uncommons.reportng.JUnitXMLReporter
                                 </value>
                             </property>
+                            <property>
+                                <name>org.uncommons.reportng.escape-output</name>
+                                <value>true</value>
+                            </property>
                         </properties>
                         <workingDirectory>target/</workingDirectory>
                     </configuration>
@@ -161,6 +159,13 @@
                     <configuration>
                         <source>1.7</source>
                         <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <configuration>
+                        <outputDirectory>lib</outputDirectory>
                     </configuration>
                 </plugin>
             </plugins>
