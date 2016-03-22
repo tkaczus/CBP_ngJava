@@ -12,7 +12,7 @@
 <body>
 <h1>Test</h1>
 <p>
-  Test duration: 17,610s
+  Test duration: 303,755s
 </p>
 
 
@@ -28,23 +28,143 @@
                   sprawdzSzczegolyRachunku
       </td>
   <td class="duration">
-    3,321s
+    3,370s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: Saldo rachunku expected [11] but found [Środki własne (saldo)<br/>
-10 864 823,57 PLN]</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: expected [Środki własne (saldo)<br/>
+10 849 696,56 PLN] but found [Środki własne (saldo)<br/>
+10 849 696,56 PLN]</b></a><br />
     <div class="stackTrace" id="exception-0">
               org.testng.Assert.fail(Assert.java:94)<br />
-              org.testng.Assert.failNotEquals(Assert.java:513)<br />
-              org.testng.Assert.assertEqualsImpl(Assert.java:135)<br />
-              org.testng.Assert.assertEquals(Assert.java:116)<br />
-              org.testng.Assert.assertEquals(Assert.java:190)<br />
-              asseco.CBP.pages.Accounts.wybierzSzczegolyRachunku(Accounts.java:49)<br />
-              asseco.CBP.tests.AccountsOneSession.sprawdzSzczegolyRachunku(AccountsOneSession.java:14)<br />
+              org.testng.Assert.failNotSame(Assert.java:509)<br />
+              org.testng.Assert.assertSame(Assert.java:460)<br />
+              org.testng.Assert.assertSame(Assert.java:470)<br />
+              asseco.CBP.pages.Accounts.wybierzSzczegolyRachunku(Accounts.java:51)<br />
+              asseco.CBP.tests.AccountsOneSession.sprawdzSzczegolyRachunku(AccountsOneSession.java:24)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)<br />
+              org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:122)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">asseco.CBP.tests.AwizoOneSession</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testDodajAwizo
+      </td>
+  <td class="duration">
+    0,017s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: repeater(element in elements).row(2) didn&apos;t have any matching elements at this place in the DOM<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;<br/>
+System info: host: &apos;aps00062837-mb&apos;, ip: &apos;172.20.22.253&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_71&apos;<br/>
+Driver info: driver.version: RemoteWebDriver</b></a><br />
+    <div class="stackTrace" id="exception-1">
+              com.paulhammant.ngwebdriver.ByAngular$BaseBy.errorIfNull(ByAngular.java:140)<br />
+              com.paulhammant.ngwebdriver.ByAngular$BaseBy.findElement(ByAngular.java:151)<br />
+              com.paulhammant.ngwebdriver.ByAngularRepeaterRow.findElement(ByAngularRepeaterRow.java:9)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              asseco.CBP.components.NavigationMenu.OpenMenuIfClosed(NavigationMenu.java:28)<br />
+              asseco.CBP.components.NavigationMenu.navigateToAwizo(NavigationMenu.java:63)<br />
+              asseco.CBP.tests.AwizoOneSession.testDodajAwizo(AwizoOneSession.java:12)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)<br />
+              org.testng.internal.Invoker.invokeMethod(Invoker.java:643)<br />
+              org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)<br />
+              org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)<br />
+              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)<br />
+              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)<br />
+              org.testng.TestRunner.privateRun(TestRunner.java:782)<br />
+              org.testng.TestRunner.run(TestRunner.java:632)<br />
+              org.testng.SuiteRunner.runTest(SuiteRunner.java:366)<br />
+              org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)<br />
+              org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)<br />
+              org.testng.SuiteRunner.run(SuiteRunner.java:268)<br />
+              org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)<br />
+              org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)<br />
+              org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)<br />
+              org.testng.TestNG.runSuitesLocally(TestNG.java:1169)<br />
+              org.testng.TestNG.run(TestNG.java:1064)<br />
+              org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)<br />
+              org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:122)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+              sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+              sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+              java.lang.reflect.Method.invoke(Method.java:497)<br />
+              com.intellij.rt.execution.application.AppMain.main(AppMain.java:144)<br />
+                </div>
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">asseco.CBP.tests.CreditsOneSession</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testSplacKredyt
+      </td>
+  <td class="duration">
+    0,022s
+  </td>
+  <td class="result">
+        
+    
+        
+
+        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.NoSuchElementException: repeater(element in elements).row(2) didn&apos;t have any matching elements at this place in the DOM<br/>
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html<br/>
+Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;<br/>
+System info: host: &apos;aps00062837-mb&apos;, ip: &apos;172.20.22.253&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_71&apos;<br/>
+Driver info: driver.version: RemoteWebDriver</b></a><br />
+    <div class="stackTrace" id="exception-2">
+              com.paulhammant.ngwebdriver.ByAngular$BaseBy.errorIfNull(ByAngular.java:140)<br />
+              com.paulhammant.ngwebdriver.ByAngular$BaseBy.findElement(ByAngular.java:151)<br />
+              com.paulhammant.ngwebdriver.ByAngularRepeaterRow.findElement(ByAngularRepeaterRow.java:9)<br />
+              org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)<br />
+              asseco.CBP.components.NavigationMenu.OpenMenuIfClosed(NavigationMenu.java:28)<br />
+              asseco.CBP.components.NavigationMenu.navigateToCredits(NavigationMenu.java:70)<br />
+              asseco.CBP.tests.CreditsOneSession.testSplacKredyt(CreditsOneSession.java:12)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -79,6 +199,63 @@
       </table>
 
 
+  <table class="resultsTable">
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
+          <tr>
+        <td colspan="3" class="group">asseco.CBP.tests.DepositsOneSession</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testDodajDepozyt
+      </td>
+  <td class="duration">
+    16,865s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">asseco.CBP.tests.PaymentsActiveOneSession</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testPrzelewZUSOdroczony
+      </td>
+  <td class="duration">
+    202,643s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+          <tr>
+        <td colspan="3" class="group">asseco.CBP.tests.PaymentsOneSession</td>
+      </tr>
+            
+<tr>
+  <td class="method">
+                  testPrzelewZUS
+      </td>
+  <td class="duration">
+    18,713s
+  </td>
+  <td class="result">
+        
+    
+        
+
+      </td>
+</tr>
+      </table>
   
 </body>
 </html>

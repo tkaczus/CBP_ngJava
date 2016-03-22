@@ -16,7 +16,7 @@ public class PaymentsActiveOneSession extends WebDriverTestBase {
     private String kwota = Helpers.losujKwote();
     private String tytul = Helpers.zwrocUID();
     ClientData user = new ClientData();
-    String nrb = user.getNrb();
+    String nrb = user.getNrbShort();
 
     @Test(enabled = false)
     public void testPrzelewZwyklyOdroczony() throws IOException {

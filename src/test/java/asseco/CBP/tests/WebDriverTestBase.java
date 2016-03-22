@@ -62,14 +62,12 @@ public class WebDriverTestBase {
         System.setProperty("org.uncommons.reportng.escape-output", "false");
         if (!result.isSuccess()) {
             File screenshot1 = new File("test-output\\html\\" + result.getMethod().getMethodName() + ".png");
-//            screenshot1.delete();
             File screenshotTempFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
             try {
                 Files.copy(screenshotTempFile, screenshot1);
             } catch (Exception e) {
                 System.out.println(e);
             }
-//            Reporter.log("<a href=\"" + screenshot1.getCanonicalPath() + "\">" + result.getMethod().getMethodName() + "Screenshot</a>");
             Reporter.log("<font color=\"#00bfff\">" + result.getMethod().getMethodName() + "</font><br />");
             Reporter.log("<img src=\"" + screenshot1.getName() + "\" style=\"width:1051px;height:679px;\" border=\"1\" alt=\"\"/><br />");
             Reporter.setEscapeHtml(false);

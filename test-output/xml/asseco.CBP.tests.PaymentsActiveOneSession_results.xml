@@ -4,10 +4,10 @@
            failures="0"
            errors="0"
            skipped="0"
-           time="178,246">
+           time="202,643">
   <properties />
   
   
-            <testcase name="testPrzelewZUSOdroczony" time="178,246" classname="asseco.CBP.tests.PaymentsActiveOneSession" />
+            <testcase name="testPrzelewZUSOdroczony" time="202,643" classname="asseco.CBP.tests.PaymentsActiveOneSession" />
       
 </testsuite>

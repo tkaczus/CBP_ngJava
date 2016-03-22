@@ -10,6 +10,7 @@ public class Authorizations {
 
 	   private static final By tanX = ByAngular.model("ngModel.tanX");
 	   private static final By tanY = ByAngular.model("ngModel.tanY");
+	   private static final By sms = ByAngular.model("ngModel.sms");
 	   private WebDriver driver;
 
 	   public Authorizations(WebDriver driver) {
@@ -22,9 +23,14 @@ public class Authorizations {
 			   driver.findElement(tanY).sendKeys("11");
 		   }
 		  catch (WebDriverException e) {
-			  System.out.println("Brak autoryzacji");
-//		assertThat(e.getMessage(), startsWith("$scope variable 'locationnnnnnnnn' not found in same scope as the element passed in."));
+			  System.out.println("Brak autoryzacji TAN");
 		}
+		   try {
+			   driver.findElement(sms).sendKeys("11111111");
+		   }
+		   catch (WebDriverException e) {
+			   System.out.println("Brak autoryzacji SMS");
+		   }
 		   finally {
 			  driver.findElement(Przycisk).click();
 		  }

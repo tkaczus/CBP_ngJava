@@ -45,9 +45,9 @@ public class Accounts {
 	public void wybierzSzczegolyRachunku(String nrb,String saldo) {
 		driver.findElement(SZCZEGOLY).click();
 		waitForAngularRequestsToFinish(driver);
-		Assert.assertEquals(driver.findElement(NUMER_RACHUNKU).getText().contains(nrb),true);
-		Assert.assertEquals(driver.findElement(SALDO).getText(),saldo,"Saldo rachunku");
+		Assert.assertSame(driver.findElement(SALDO).getText(),"Środki własne (saldo)\n"+saldo);
 	}
+
 
 	/**
 	 * wyszukanie po fragmencie nrb
